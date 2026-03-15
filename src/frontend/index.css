@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* NoteMarket – Light academic palette */
+    --background: 0.98 0.005 90;
+    --foreground: 0.18 0.02 250;
+
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 250;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 250;
+
+    /* Deep forest green primary */
+    --primary: 0.35 0.09 160;
+    --primary-foreground: 0.98 0.005 90;
+
+    --secondary: 0.93 0.015 90;
+    --secondary-foreground: 0.25 0.03 250;
+
+    --muted: 0.94 0.008 90;
+    --muted-foreground: 0.52 0.02 250;
+
+    /* Warm gold accent */
+    --accent: 0.78 0.12 75;
+    --accent-foreground: 0.18 0.02 250;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 0.98 0.005 90;
+
+    --border: 0.88 0.01 90;
+    --input: 0.88 0.01 90;
+    --ring: 0.35 0.09 160;
+
+    --radius: 0.5rem;
+
+    --chart-1: 0.35 0.09 160;
+    --chart-2: 0.78 0.12 75;
+    --chart-3: 0.55 0.18 200;
+    --chart-4: 0.65 0.15 30;
+    --chart-5: 0.45 0.12 300;
+
+    --sidebar: 0.96 0.007 90;
+    --sidebar-foreground: 0.18 0.02 250;
+    --sidebar-primary: 0.35 0.09 160;
+    --sidebar-primary-foreground: 0.98 0.005 90;
+    --sidebar-accent: 0.93 0.015 90;
+    --sidebar-accent-foreground: 0.25 0.03 250;
+    --sidebar-border: 0.88 0.01 90;
+    --sidebar-ring: 0.35 0.09 160;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .grain-overlay {
+    position: relative;
+  }
+
+  .grain-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    border-radius: inherit;
+  }
+}
